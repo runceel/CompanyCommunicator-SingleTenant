@@ -149,6 +149,7 @@ namespace Microsoft.Teams.Apps.CompanyCommunicator
             services.AddHttpClient();
 
             // Add bot services.
+            services.AddSingleton<BotFrameworkAuthentication, ConfigurationBotFrameworkAuthentication>();
             services.AddTransient<TeamsDataCapture>();
             services.AddTransient<TeamsFileUpload>();
             services.AddTransient<UserTeamsActivityHandler>();

@@ -112,6 +112,7 @@ namespace Microsoft.Teams.Apps.CompanyCommunicator.Prep.Func
             CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo(culture);
 
             // Add bot services.
+            builder.Services.AddSingleton<BotFrameworkAuthentication, ConfigurationBotFrameworkAuthentication>();
             builder.Services.AddSingleton<UserAppCredentials>();
             builder.Services.AddSingleton<AuthorAppCredentials>();
             builder.Services.AddSingleton<ICredentialProvider, ConfigurationCredentialProvider>();
